@@ -187,11 +187,7 @@
 @media (max-width: 480px) {
   .counter {
     font-size: 10px;
-    top: -15px;
+    top: -20px;
     padding: 1px 6px;
   }
-}
-
-img {
-  width: 100%;
 }
