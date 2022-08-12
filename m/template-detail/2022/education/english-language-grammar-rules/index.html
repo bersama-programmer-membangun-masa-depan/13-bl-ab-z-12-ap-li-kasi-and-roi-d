@@ -19,7 +19,6 @@
 
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/animate.css">
-  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">
   <link rel="stylesheet" href="/assets/css/magnific-popup.css">
@@ -29,7 +28,8 @@
   <!-- Core Stylesheet-->
   <link rel="stylesheet" href="/assets/css/style.css">
   <!-- Web App Manifest-->
-  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="/assets/css/default/image-slider/image-slider.css">
+  <link rel="stylesheet" href="/assets/css/default/image-slider/image-slider-2.css">
 </head>
 
 <body>
@@ -140,8 +140,45 @@
     <div class="container">
       <div class="pt-3 d-block"></div>
       <div class="blog-details-post-thumbnail position-relative">
-        <!-- Post Image-->
-        <iframe src="image-slider.html" class="iframe-template-slider" title="description"></iframe>
+        <div class="component">
+          <div id="carousel" class="owl-carousel main-carousel">
+            <div class="item">
+              <img src="/assets/img/thumbnail-template-detail/2022/education/english-language-grammar-rules/blabz-s1.png" alt="Blabz"
+                class="img-fluid" />
+            </div>
+            <div class="item">
+              <img src="/assets/img/thumbnail-template-detail/2022/education/english-language-grammar-rules/blabz-s1.png" alt="Blabz"
+                class="img-fluid" />
+            </div>
+            <div class="item">
+              <img src="/assets/img/thumbnail-template-detail/2022/education/english-language-grammar-rules/blabz-s1.png" alt="Blabz"
+                class="img-fluid" />
+            </div>
+          </div>
+          <div class="thumbnails-wrapper">
+            <div class="collapse-button">
+              <div class="icon"></div>
+            </div>
+            <div class="counter">
+              <span class="current-item"></span>/<span class="max-items"></span>
+            </div>
+            <div id="thumbnails" class="owl-carousel">
+              <div class="item">
+                <img src="/assets/img/thumbnail-template-detail/2022/education/english-language-grammar-rules/blabz-s1.png" alt="Blabz"
+                  class="img-fluid" />
+              </div>
+              <div class="item">
+                <img src="/assets/img/thumbnail-template-detail/2022/education/english-language-grammar-rules/blabz-s1.png" alt="Blabz"
+                  class="img-fluid" />
+              </div>
+              <div class="item">
+                <img src="/assets/img/thumbnail-template-detail/2022/education/english-language-grammar-rules/blabz-s1.png" alt="Blabz"
+                  class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- partial -->
       </div>
     </div>
     <div class="blog-description py-3">
@@ -263,7 +300,6 @@
   <script src="/assets/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/default/internet-status.js"></script>
-  <script src="/assets/js/waypoints.min.js"></script>
   <script src="/assets/js/jquery.easing.min.js"></script>
   <script src="/assets/js/wow.min.js"></script>
   <script src="/assets/js/owl.carousel.min.js"></script>
@@ -277,6 +313,10 @@
   <script src="/assets/js/jquery.dataTables.min.js"></script>
   <script src="/assets/js/default/active.js"></script>
   <script src="/assets/js/default/clipboard.js"></script>
+  <!-- Main JS Image Slider File -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js'></script>
+  <script src="/assets/js/default/image-slider/image-slider.js"></script>
   <!-- Footer Javascript -->
   <script src="/assets/js/default/footer-nav/category/page-detail/main.js"></script>
 
