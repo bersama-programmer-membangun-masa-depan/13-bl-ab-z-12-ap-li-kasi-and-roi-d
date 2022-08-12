@@ -9910,3 +9910,9 @@ div.dataTables_wrapper div.dataTables_paginate span .paginate_button.current {
 [data-theme="dark"] body .notification-message {
   background-color: #0C153B !important;
 }
+
+.iframe-template-slider {
+  height: 220px; 
+  overflow:scroll; 
+  width: 350px
+}
