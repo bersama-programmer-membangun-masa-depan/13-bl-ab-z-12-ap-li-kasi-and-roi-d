@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         })
 
     } else {
-        window.location = 'M/Onboarding/';
+        window.location = '/m/onboarding/';
     }
 });
 
