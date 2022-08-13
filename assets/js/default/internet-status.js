@@ -7,7 +7,7 @@
         offlineText = "No Internet Connection!";
 
     if (window.navigator.onLine) {
-        internetStatus.css("display", "none").text(onlineText).addClass("internet-is-back").removeClass("internet-is-lost");
+        internetStatus.css("display", "none").text(onlineText).addClass("inte rnet-is-back").removeClass("internet-is-lost");
     } else {
         internetStatus.css("display", "block").text(offlineText).addClass("internet-is-lost").removeClass("internet-is-back");
     }
