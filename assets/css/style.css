@@ -3180,6 +3180,11 @@ textarea:invalid {
   border-radius: 5px;
 }
 
+.btn-group-sm>.btn,
+.btn-template-detail {
+  width: 169px;
+}
+
 .btn-round {
   border-radius: 50rem !important;
 }
