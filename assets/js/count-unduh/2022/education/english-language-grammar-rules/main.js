@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Now let's listen to the value of the counter and write it
 // to the counter DOM element
-const counter = document.getElementsByClassName("english-language-grammar-rules-unduh")[0];
+const counter = document.getElementsByClassName("count-view")[0];
 
 const counterRef = firebase.database().ref("Power Point Unduh English Language Grammar Rules Presentation");
 
@@ -21,7 +21,7 @@ counterRef.on("value", count => {
 counter.textContent = count.val().toLocaleString().replaceAll(',', '.');
 });
 
-const incrementButton = document.getElementsByClassName("download-english-language-grammar-rules")[0];
+const incrementButton = document.getElementsByClassName("download")[0];
 incrementButton.addEventListener(
 "click",
 () => {
