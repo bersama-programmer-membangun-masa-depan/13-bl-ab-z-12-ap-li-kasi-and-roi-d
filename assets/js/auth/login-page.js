@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         })
 
     } else {
-        window.location = 'https://www.blabz.my.id/1.%20App-Auth-Android-Only-OTP/page/';
+        window.location = '/auth/';
     }
 });
 
