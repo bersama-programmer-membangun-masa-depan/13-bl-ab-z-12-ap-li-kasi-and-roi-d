@@ -1,45 +1,130 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mexa | Phone</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="wrapper">
-        <h1 class="main-heading">Sign in</h1>
-        <p class="sub-text">Sign in using your mobile number.</p>
-        <div class="message-wrapper" id="messageDiv">
-            <h6 class="message"></h6>
-        </div>
-        <div class="form-wrapper">
-            <form id="loginForm">
-                <div class="input-field">
-                    <label>Phone Number</label>
-                    <input type="text" placeholder="+62 xxxxxxxxxxx" name="phone">
-                </div>
-                <button class="main-button" type="submit" id="sign-in-button">Sign in</button>
-            </form>
-        </div>
-        <div class="form-wrapper">
-            <form id="otpForm">
-                <div class="input-field">
-                    <label>Enter OTP</label>
-                    <input type="number" placeholder="One time password" name="otp_value">
-                </div>
-                <button class="main-button" type="submit">Verify OTP</button>
-            </form>
-        </div>
-    </div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#0134d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags-->
+  <!-- Title-->
+  <title>FunGames | Welcome</title>
+  <!-- Fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet">
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-    <script src="app.js"></script>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="/assets/css/ion.rangeSlider.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/css/apexcharts.css">
+  <!-- Core Stylesheet-->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- Core Stylesheet-->
+  <link rel="stylesheet" href="/assets/css/default/auth/modal.css">
+  <!-- Web App Manifest-->
+  <link rel="manifest" href="manifest.json">
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+</head>
+
+<body>
+
+  <!-- Preloader-->
+  <div class="preloader d-flex align-items-center justify-content-center" id="preloader">
+    <div class="spinner-grow text-primary" role="status">
+      <div class="sr-only">Loading...</div>
+    </div>
+  </div>
+  <!-- Internet Connection Status-->
+  <div class="internet-connection-status" id="internetStatus"></div>
+  <!-- Hero Block Wrapper-->
+  <div class="hero-block-wrapper bg-primary">
+    <!-- Styles-->
+    <div class="hero-block-styles">
+      <div class="hb-styles1" style="background-image: url('../../Assets/img/core-img/dot.png') "></div>
+      <div class="hb-styles2"></div>
+      <div class="hb-styles3"></div>
+    </div>
+    <div class="container">
+      <!-- Hero Block Content-->
+      <div class="hero-block-content"><img class="mb-4" src="../../Assets/img/Onboarding/Mobile-Game/mobile-game.png"
+          alt="Blabz" style="cursor: none;">
+        <h2 class="display-4 text-white mb-3">Selamat Datang Di Blabz</h2>
+        <p class="text-white">Gunakan Berbagai Macam Template Untuk Kalian Secara Gratis.</p>
+        <a class="btn btn-warning btn-lg w-100" style="z-index: 0;" id="open-modal">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Popup -->
+  <div class="modal__container" id="modal-container">
+    <div class="modal__content">
+      <div class="modal__close close-modal" title="Close">
+        <i class='bx bx-x'></i>
+      </div>
+
+      <img src="../../Assets/img/Onboarding/login.png" alt="Blabz" class="modal__img">
+
+      <h1 class="modal__title">Login Now</h1>
+      <p class="modal__description">Login To Start Blabz</p>
+
+      <a class="login">
+        <button id="button" class="modal__button modal__button-width">
+          Continue With Google
+        </button>
+      </a>
+
+      <br><br>
+      <p class="modal__description">By continuing, you agree to our
+        <br><a href="" class="police">Terms of Service</a>
+        &
+        <a href="Privacy-Police/" class="police" target="_blank">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+  <!-- Login Popup -->
+
+  <!-- Firebase Login -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="/assets/js/auth/login/login.js"></script>
+  <!-- Firebase Login -->
+
+  <!-- All JavaScript Files-->
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/waypoints.min.js"></script>
+  <script src="/assets/js/jquery.easing.min.js"></script>
+  <script src="/assets/js/wow.min.js"></script>
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <script src="/assets/js/jquery.counterup.min.js"></script>
+  <script src="/assets/js/jquery.countdown.min.js"></script>
+  <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/ js/isotope.pkgd.min.js"></script>
+  <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="/assets/js/default/dark-mode-switch.js"></script>
+  <script src="/assets/js/ion.rangeSlider.min.js"></script>
+  <script src="/assets/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/default/active.js"></script>
+  <script src="/assets/js/default/clipboard.js"></script>
+  <!-- Login Modal-->
+  <script src="/assets/js/auth/modal/main.js"></script>
+  <!-- JavaScript Internet Files -->
+  <script src="/assets/js/default/internet-status.js"></script>
+  <script src="/assets/js/default/internet/blabz.js"></script>
+
+
 </body>
+
+
 </html>
